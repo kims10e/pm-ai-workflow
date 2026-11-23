@@ -57,8 +57,8 @@ class Art:
 '''
 
 # ---------- A: Executive one-pager ----------
-A=Art(1600,1000,'시안 A 임원용 한 장 스토리')
-A.label(64,56,1200,'PM AI Workflow',38,INK,700,'left',48)
+A=Art(1600,1000,'PM AI Workflow — 서비스 딜리버리 자동화 설계 개념도 (v0.1)')
+A.label(64,56,1472,'PM AI Workflow — 서비스 딜리버리 자동화 설계 개념도 (v0.1)',34,INK,700,'left',48)
 A.label(64,112,1300,'PM 표준 딜리버리 프로세스를 AI 에이전트로 자동화 — AI가 준비하고, PM이 승인한다',20,MUTED,400,'left',28)
 A.band(64,180,360,520,'#EEF1F5'); A.band(480,180,736,520,'#E8EEF8'); A.band(1272,180,264,520,'#EEF1F5')
 A.label(88,200,312,'1 · 왜',15,NAVY,700,'left'); A.label(88,222,312,'반복되는 PM 업무의 문제',18,INK,700,'left',24)
