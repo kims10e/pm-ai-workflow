@@ -34,4 +34,12 @@
 - [x] README: 문제·설계·실행 방법·결과물 샘플·한계 — `README.md`, `requirements.txt`, `docs/samples/`(확정본 샘플 7개)
 - [ ] 이력서·포트폴리오용 한 줄 요약
 
+## 개념도 갱신 (2026-11-23 추가)
+- [x] 시안 A(임원용 한 장)·B(실무자용 스윔레인)·C(단계별 자동화 지도)를 `docs/diagrams/`에 독립 HTML·PNG로 추가, 생성기 `docs/diagrams/gen_diagrams.py`
+- [x] 초기 개념도는 `docs/PM_AI_Workflow_Concept_v0.1.html`로 보관
+- [ ] 실제 구현에 맞게 갱신: 텔레그램은 선택 입력으로, 변경안 규칙 검증(실패 시 1회 재시도)·반려/시간 초과 시 Workbook 불변 경로, Quality Gate 11개 점검(UNKNOWN 표시), intake(P0→P1) 반영
+- [ ] 효과 문구를 실제 값으로: 주간 1회 실행 약 5분 + PM 검토(수작업 약 2시간은 경험치로 표기)
+- [ ] README 상단에 시안 A 또는 C 이미지 삽입, 시연 영상 링크와 함께 배치
+- 수정 방법: `gen_diagrams.py`의 카드 좌표·문구를 고친 뒤 `python docs/diagrams/gen_diagrams.py` 실행 → HTML 갱신 → 브라우저로 열어 확인 후 PNG 다시 캡처(화살표는 카드 좌표로 계산되므로 카드를 옮기면 함께 맞춰짐)
+
 ## 4~5일차 — 여유·보완
