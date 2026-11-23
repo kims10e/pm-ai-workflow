@@ -39,7 +39,8 @@
 - [x] 초기 개념도는 `docs/PM_AI_Workflow_Concept_v0.1.html`로 보관
 - [ ] 실제 구현에 맞게 갱신: 텔레그램은 선택 입력으로, 변경안 규칙 검증(실패 시 1회 재시도)·반려/시간 초과 시 Workbook 불변 경로, Quality Gate 11개 점검(UNKNOWN 표시), intake(P0→P1) 반영
 - [ ] 효과 문구를 실제 값으로: 주간 1회 실행 약 5분 + PM 검토(수작업 약 2시간은 경험치로 표기)
-- [ ] README 상단에 시안 A 또는 C 이미지 삽입, 시연 영상 링크와 함께 배치
+- [x] README 상단에 시안 A 이미지 삽입, 시연 영상 링크 자리 마련(2026-11-23)
+- [ ] 촬영 후 README의 시연 영상 링크(TODO 주석 자리)에 URL 채우기
 - 수정 방법: `gen_diagrams.py`의 카드 좌표·문구를 고친 뒤 `python docs/diagrams/gen_diagrams.py` 실행 → HTML 갱신 → 브라우저로 열어 확인 후 PNG 다시 캡처(화살표는 카드 좌표로 계산되므로 카드를 옮기면 함께 맞춰짐)
 
 ## 4~5일차 — 여유·보완

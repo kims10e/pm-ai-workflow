@@ -5,6 +5,11 @@ PM 표준 딜리버리 프로세스(수주 인수인계 → 착수 → 계획 �
 
 > **English summary** — A weekly PM loop automated with an AI agent: a status memo goes in (file or Telegram), the agent proposes validated changes to a CSV-based Project Workbook and drafts a status report, and **nothing is applied until a human approves** (terminal prompt or Telegram button). Every applied change is logged with its evidence. A rule-based Quality Gate checks the four process checkpoints. Python standard library + `python-docx`, driven by `claude -p`. All data is fictional.
 
+![PM AI Workflow 개념도: 왜, 어떻게, 무엇이 달라지나](docs/diagrams/concept_A_executive.png)
+
+> ▶ **시연 영상 (약 2~3분)**: *촬영 후 링크를 추가합니다.* <!-- TODO: 영상 URL을 여기에 넣는다 -->
+> 영상 시나리오는 [docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md), 다른 개념도는 [실무자용 스윔레인](docs/diagrams/concept_B_swimlane.png) · [단계별 자동화 지도](docs/diagrams/concept_C_map.png)입니다.
+
 ## 문제
 
 프로젝트 매니저는 매주 같은 일을 반복합니다. 업데이트 메모를 읽고, 리스크·이슈·액션 대장을 고치고, 마일스톤과 OKR 진척을 맞추고, 보고서를 쓰고, RAG 상태를 정합니다. 그리고 이 과정에서 놓치는 것이 생깁니다. 기한이 지난 액션, 담당자 없는 고위험 리스크, 계획 주차를 넘긴 마일스톤 리뷰 같은 것들입니다.
