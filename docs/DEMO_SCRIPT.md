@@ -54,7 +54,7 @@
 | 1:25 | **승인 요청 도착** | 텔레그램(확대) | 아직 아무것도 바뀌지 않았습니다 / *Nothing has changed yet* | 승인 요청 메시지 전체를 천천히 보여줍니다. 마우스로 변경 목록의 전후 값, "확인할 점", "AI 추정이 포함될 수 있습니다" 문구, [승인] [반려] 버튼을 차례로 짚습니다. "AI가 만든 제안입니다. 결정은 사람이 합니다." |
 | 1:55 | **[승인] 클릭** | 텔레그램 + 터미널 | 사람이 버튼을 누르면 반영됩니다 / *Applied only after the human taps Approve* | [승인] 클릭 → 봇의 "승인 완료" 답장, 버튼이 사라짐. 터미널의 `승인 완료: Workbook N건 반영`. |
 | 2:10 | **결과 확인** | 터미널 → 문서 | 변경 전후와 근거가 남습니다 / *Before/after and evidence are logged* | ① `python scripts/show_changes.py` — 실제(전)와 복사본(후)에서 바뀐 칸만 `[-전-]{+후+}`로 보여줍니다(`8→17`, `Occurred→Closed`). ② `demo_run\outputs\final\week08\report.docx`를 열어 RAG 표의 색상. ③ `python src/pm_agent.py quality --week 8 --root demo_run` — 경고가 3개에서 2개로 줄고, 새 액션의 담당자 `TBD`가 드러납니다. |
-| 2:35 | **마무리** | GitHub 저장소 화면 | 한계는 README에 정직하게 적었습니다 / *Limits are documented honestly* · github.com/kims10e/pm-ai-workflow | "테스트 166건, 점검 11개, 안전장치와 한계는 README에 있습니다." |
+| 2:35 | **마무리** | GitHub 저장소 화면 | 한계는 README에 정직하게 적었습니다 / *Limits are documented honestly* · github.com/kims10e/pm-ai-workflow | "테스트 175건, 점검 11개, 안전장치와 한계는 README에 있습니다." |
 
 ## 촬영 팁
 
