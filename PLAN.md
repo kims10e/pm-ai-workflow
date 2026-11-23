@@ -29,6 +29,8 @@
 
 ## 3일차 — 시연 자료
 - [ ] 2~3분 시연 영상(5→7주차 루프, 승인 흐름)
+  - [x] 촬영 시나리오·준비물: `docs/DEMO_SCRIPT.md`(장면 8개·자막·해설·주의사항), `scripts/prepare_demo.ps1`(시연용 복사본), `scripts/show_changes.py`(변경 전후), 시연용 8주차 메모를 실제 `claude`로 사전 연습(변경 9건, 텔레그램 요약 한 통에 표시됨)
+  - [ ] 촬영·편집(직접 녹화, 대기 약 5분은 편집으로 생략)
 - [x] README: 문제·설계·실행 방법·결과물 샘플·한계 — `README.md`, `requirements.txt`, `docs/samples/`(확정본 샘플 7개)
 - [ ] 이력서·포트폴리오용 한 줄 요약
 

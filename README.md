@@ -52,7 +52,7 @@ flowchart LR
 | 텔레그램 | [telegram_io.py](src/telegram_io.py) · [approval_flow.py](src/approval_flow.py) · [memo_listener.py](src/memo_listener.py) | 봇 연결·본인 확인, 승인 버튼, 메모 입력 |
 | 문서 | [md_to_docx.py](src/md_to_docx.py) | 보고서를 한글 서식의 Word 파일로 변환 |
 | AI 규칙 | [.claude/skills/](.claude/skills/) | `status-report` `risk-update` `sow-intake` `charter-okr` |
-| 시험 | [tests/](tests/) | 단위 테스트 166건(가짜 LLM·가짜 텔레그램 사용, 실제 호출 없음) |
+| 시험 | [tests/](tests/) | 단위 테스트 170건(가짜 LLM·가짜 텔레그램 사용, 실제 호출 없음) |
 
 ## 실행 방법
 
@@ -134,7 +134,8 @@ workbook/       Project Workbook CSV(단일 기준 데이터) + history.csv(변�
 src/            오케스트레이터와 도구 코드
 .claude/skills/ 단계별 PM 스킬(AI 규칙)
 tests/          단위 테스트와 고정 fixture
-docs/           기준 프로세스, 설계 개념도, 결과물 샘플
+scripts/        시연용 복사본 만들기·변경 전후 보기(시연 영상 시나리오: docs/DEMO_SCRIPT.md)
+docs/           기준 프로세스, 설계 개념도, 결과물 샘플, 시연 시나리오
 outputs/        초안(drafts)·확정본(final)·점검 결과(quality). Git에는 올리지 않음
 ```
 
