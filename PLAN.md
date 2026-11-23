@@ -22,6 +22,11 @@
 - [x] Quality Gate: 4대 체크 이벤트·누락 점검(예: Kickoff 전 범위 합의 여부, 마일스톤 리뷰 누락) — `src/quality_gate.py`, `pm_agent quality --week N [--notify]`, 규칙 기반 11개 점검(체크 이벤트 4 + 정기 7), 테스트 20건. 실제 Workbook 7주차 기준: FAIL 0·WARN 3·UNKNOWN 1
 - [x] P0→P1: 가상 SOW → Handover 체크리스트·Charter·OKR 초안(sow-intake, charter-okr) — `src/intake.py`, `pm_agent intake [--notify]`, 문서 3종(md·docx)+M0·초기 리스크 변경안, 테스트 21건. 실제 SOW로 초안 생성 확인(Handover 항목 13개·모호한 점 5건). 실제 Workbook 승인(`approve --week 0`)은 PM 판단 대기
 
+## 공개 준비 (2026-11-23 완료)
+- [x] 기준 문서의 사내·회사 명칭 표현 제거, 옛 기록 제거를 위해 저장소 재생성(옛 기록은 `backup/`에 번들로 보관, Git 제외)
+- [x] 새 저장소 Public 공개: https://github.com/kims10e/pm-ai-workflow — Commit 1개, 금지어 검출 0건
+- [x] 자동 보안 검토 지적 반영(승인 요약 잘림 시 버튼 금지, CSV 수식 주입 차단, 게이트 표기 엄격 검증, 비ASCII 입력 처리) — 테스트 166건
+
 ## 3일차 — 시연 자료
 - [ ] 2~3분 시연 영상(5→7주차 루프, 승인 흐름)
 - [x] README: 문제·설계·실행 방법·결과물 샘플·한계 — `README.md`, `requirements.txt`, `docs/samples/`(확정본 샘플 7개)
