@@ -87,7 +87,7 @@
 *화면: GitHub 저장소 `kims10e/pm-ai-workflow`*
 
 > 검증은 가상 데이터로만 했고, 한계는 README에 정직하게 적었습니다.
-> 코드와 테스트 170건은 GitHub에 공개되어 있습니다.
+> 코드와 테스트 175건은 GitHub에 공개되어 있습니다.
 
 *자막 EN: Limits are documented honestly.*
 

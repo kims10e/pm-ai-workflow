@@ -52,7 +52,7 @@ flowchart LR
 | 텔레그램 | [telegram_io.py](src/telegram_io.py) · [approval_flow.py](src/approval_flow.py) · [memo_listener.py](src/memo_listener.py) | 봇 연결·본인 확인, 승인 버튼, 메모 입력 |
 | 문서 | [md_to_docx.py](src/md_to_docx.py) | 보고서를 한글 서식의 Word 파일로 변환 |
 | AI 규칙 | [.claude/skills/](.claude/skills/) | `status-report` `risk-update` `sow-intake` `charter-okr` |
-| 시험 | [tests/](tests/) | 단위 테스트 170건(가짜 LLM·가짜 텔레그램 사용, 실제 호출 없음) |
+| 시험 | [tests/](tests/) | 단위 테스트 175건(가짜 LLM·가짜 텔레그램 사용, 실제 호출 없음) |
 
 ## 실행 방법
 
