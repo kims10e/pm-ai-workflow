@@ -6,3 +6,4 @@ __pycache__/
 .venv/
 backup/
 demo_run/
+.tmp.driveupload/
