@@ -1,0 +1,8 @@
+id,phase,milestone,planned_week,status,gate
+M1,P1,Kickoff 및 OKR 합의,W1,Done,G1
+M2,P2,마이그레이션 계획 승인,W4,Done,G2
+M3,P3,파일럿 웨이브 고객 리뷰,W6,Planned,G3
+M4,P3,웨이브1 완료,W10,Planned,G3
+M5,P3,웨이브2 완료,W13,Planned,G3
+M6,P4,고객 인수 서명,W15,Planned,G4
+M7,P5,완료 보고,W16,Planned,G5

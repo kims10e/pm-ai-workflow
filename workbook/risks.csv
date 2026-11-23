@@ -1,0 +1,7 @@
+id,title,probability,impact,score,owner,mitigation,status
+R-001,고객 권한 승인 지연으로 웨이브 시작 지연,H,H,9,TPM,주간 점검 및 고객 PM 에스컬레이션,Closed
+R-002,야간 배치 성능 목표 미달,M,M,4,RSA,대형 테이블 파티셔닝 및 튜닝,Occurred
+R-003,파트너 엔지니어 휴가로 웨이브1 착수 지연,H,M,6,TBD,TBD,Closed
+R-004,웨이브2 레거시 스토어드 프로시저 고난도로 웨이브2 완료 지연,H,H,9,TBD,TBD,Open
+R-005,BI 도구 버전 고정 가정 붕괴로 BI 리포트 재연결 범위 확장,M,M,4,TBD,"P1 착수 단계에서 고객과 BI 도구 버전 고정 여부를 재확인하고, 변경 발생 시 CR 절차 적용",Open
+R-006,리포트 수치 일치 허용 오차 기준 미합의로 P4 고객 인수 단계 지연,M,H,6,TBD,"P2 단계에서 고객 BI팀과 수치 일치 허용 오차 기준을 문서화하여 합의, 테스트 계획에 반영",Open

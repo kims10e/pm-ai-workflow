@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><title>PM AI Workflow — 설계 개념도</title>
+<style>
+body{margin:0;background:#0f1115;font-family:"Malgun Gothic","Segoe UI",sans-serif;color:#e6e6e6}
+.wrap{max-width:1200px;margin:0 auto;padding:24px}
+h1{font-size:20px;margin:0 0 4px} p.sub{margin:0 0 16px;color:#9aa0a6;font-size:13px}
+svg{width:100%;height:auto;display:block}
+</style></head><body><div class="wrap">
+<h1>PM AI Workflow — 서비스 딜리버리 자동화 설계 개념도 (v0.1)</h1>
+<p class="sub">P3 주간 루프 기준 · 통합 딜리버리 프로세스(P0~P5)와 Project Workbook을 단일 기준으로 사용 · 사람 승인(Human-in-the-loop) 후 확정</p>
+<svg viewBox="0 0 1180 900" xmlns="http://www.w3.org/2000/svg" font-family="Malgun Gothic, Segoe UI, sans-serif">
+<defs>
+ <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#c9ccd1"/></marker>
+ <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#5cc58a"/></marker>
+ <marker id="o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#f0a640"/></marker>
+ <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#6aa8ff"/></marker>
+</defs>
+<style>
+ .lane{fill:#161a21;stroke:#3a3f48;stroke-width:1.2}
+ .lt{font-size:15px;font-weight:700;fill:#f1f1f1;text-anchor:middle}
+ .ls{font-size:11px;fill:#9aa0a6;text-anchor:middle}
+ .life{stroke:#2c313a;stroke-width:1.2}
+ .m{font-size:13px;fill:#e6e6e6;text-anchor:middle}
+ .c{font-size:11px;fill:#8d939b;text-anchor:middle}
+ .ln{stroke:#c9ccd1;stroke-width:1.4}
+ .box{fill:#1b2029;stroke:#4a505a;stroke-width:1}
+</style>
+
+<!-- boundary -->
+<rect x="358" y="18" width="808" height="700" rx="12" fill="none" stroke="#5b616b" stroke-dasharray="6 6"/>
+<text x="372" y="38" font-size="12" fill="#9aa0a6">개인 PC · C:\02.PM_AI_Workflow · 업무망 외부 · 가상 고객 데이터만 사용</text>
+
+<!-- lanes -->
+<g>
+ <rect class="lane" x="20" y="52" width="150" height="52" rx="8"/><text class="lt" x="95" y="76">PM</text><text class="ls" x="95" y="94">폰 · PC</text>
+ <rect class="lane" x="195" y="52" width="150" height="52" rx="8"/><text class="lt" x="270" y="76">입력 채널</text><text class="ls" x="270" y="94">Telegram · VS Code</text>
+ <rect class="lane" x="385" y="52" width="170" height="52" rx="8"/><text class="lt" x="470" y="76">오케스트레이터</text><text class="ls" x="470" y="94">pm_agent.py</text>
+ <rect class="lane" x="585" y="52" width="170" height="52" rx="8"/><text class="lt" x="670" y="76">Claude</text><text class="ls" x="670" y="94">claude -p · PM 스킬</text>
+ <rect class="lane" x="785" y="52" width="170" height="52" rx="8"/><text class="lt" x="870" y="76">Project Workbook</text><text class="ls" x="870" y="94">Actions·Risks·Issues·OKR</text>
+ <rect class="lane" x="985" y="52" width="170" height="52" rx="8"/><text class="lt" x="1070" y="76">산출물</text><text class="ls" x="1070" y="94">docx · pptx · md</text>
+</g>
+<line class="life" x1="95" y1="104" x2="95" y2="712"/><line class="life" x1="270" y1="104" x2="270" y2="712"/>
+<line class="life" x1="470" y1="104" x2="470" y2="712"/><line class="life" x1="670" y1="104" x2="670" y2="712"/>
+<line class="life" x1="870" y1="104" x2="870" y2="712"/><line class="life" x1="1070" y1="104" x2="1070" y2="712"/>
+
+<!-- 1 -->
+<line class="ln" x1="95" y1="140" x2="266" y2="140" marker-end="url(#a)"/>
+<text class="m" x="182" y="132">1. 주간 업데이트 · 회의 메모</text><text class="c" x="182" y="156">텍스트 · 음성 메모</text>
+<!-- 2 -->
+<line x1="466" y1="186" x2="274" y2="186" stroke="#5cc58a" stroke-width="1.6" marker-end="url(#g)"/>
+<text class="m" x="370" y="178" fill="#5cc58a" style="fill:#5cc58a;font-weight:700">2. 새 메시지 있어?</text><text class="c" x="370" y="202">long polling</text>
+<!-- 3 -->
+<rect class="box" x="395" y="220" width="150" height="46" rx="6"/>
+<text class="m" x="470" y="240">3. 발신자 확인</text><text class="c" x="470" y="257">단계 판별 P0~P5</text>
+<!-- 4 -->
+<line class="ln" x1="470" y1="292" x2="866" y2="292" marker-end="url(#a)"/>
+<text class="m" x="670" y="284">4. 현재 Workbook 읽기</text><text class="c" x="670" y="308">리스크 · 이슈 · 액션 · OKR 진척</text>
+<!-- 5 -->
+<line class="ln" x1="470" y1="340" x2="666" y2="340" marker-end="url(#a)"/>
+<text class="m" x="568" y="332">5. 스킬 호출</text><text class="c" x="568" y="356">status-report · risk-update</text>
+<!-- 6 -->
+<line x1="670" y1="388" x2="866" y2="388" stroke="#6aa8ff" stroke-width="1.6" marker-end="url(#b)"/>
+<text class="m" x="768" y="380" style="fill:#6aa8ff">6. 갱신안 (diff)</text><text class="c" x="768" y="404">신규 리스크 · 상태 변경</text>
+<!-- 7 -->
+<line x1="670" y1="436" x2="1066" y2="436" stroke="#6aa8ff" stroke-width="1.6" marker-end="url(#b)"/>
+<text class="m" x="868" y="428" style="fill:#6aa8ff">7. 초안 생성</text><text class="c" x="868" y="452">주간 보고서 · RAG 상태 · OKR 진척 · 액션 목록</text>
+<!-- 8 -->
+<rect x="395" y="470" width="150" height="50" rx="6" fill="#231c12" stroke="#f0a640"/>
+<text class="m" x="470" y="490" style="fill:#f0a640">8. Quality Gate</text><text class="c" x="470" y="508">체크 이벤트 · 누락 점검</text>
+<!-- 9 -->
+<line x1="466" y1="552" x2="99" y2="552" stroke="#f0a640" stroke-width="1.8" marker-end="url(#o)"/>
+<text class="m" x="282" y="544" style="fill:#f0a640;font-weight:700">9. 승인 요청 + 미리보기</text><text class="c" x="282" y="568">사람이 확인하기 전에는 확정하지 않음</text>
+<!-- 10 -->
+<line x1="95" y1="604" x2="466" y2="604" stroke="#f0a640" stroke-width="1.6" stroke-dasharray="7 5" marker-end="url(#o)"/>
+<text class="m" x="282" y="596" style="fill:#f0a640">10. 승인 / 수정 지시</text>
+<!-- 11 -->
+<line class="ln" x1="470" y1="652" x2="866" y2="652" marker-end="url(#a)"/>
+<line class="ln" x1="870" y1="652" x2="1066" y2="652" marker-end="url(#a)"/>
+<text class="m" x="770" y="644">11. 확정 저장 · 버전 기록</text><text class="c" x="770" y="668">Workbook 반영 → 보고서 확정본 · 변경 이력</text>
+<text class="c" x="1150" y="698" style="text-anchor:end">고객 · 이해관계자 공유는 PM이 직접</text>
+
+<!-- phase strip -->
+<text x="20" y="756" font-size="13" font-weight="700" fill="#f1f1f1">통합 딜리버리 단계와 자동화 스킬</text>
+<g font-size="12">
+ <rect x="20" y="768" width="183" height="104" rx="8" fill="#161a21" stroke="#3a3f48"/>
+ <text x="32" y="790" fill="#f1f1f1" font-weight="700">P0 수주·인수인계</text><text x="32" y="810" fill="#9aa0a6">sow-intake</text><text x="32" y="828" fill="#9aa0a6">범위·가정·리스크 추출</text><text x="32" y="860" fill="#9aa0a6">G0 Handover</text>
+ <rect x="213" y="768" width="183" height="104" rx="8" fill="#161a21" stroke="#3a3f48"/>
+ <text x="225" y="790" fill="#f1f1f1" font-weight="700">P1 착수</text><text x="225" y="810" fill="#9aa0a6">charter-okr</text><text x="225" y="828" fill="#9aa0a6">Charter · 공동 OKR 초안</text><text x="225" y="860" fill="#9aa0a6">G1 범위·OKR 합의</text>
+ <rect x="406" y="768" width="183" height="104" rx="8" fill="#161a21" stroke="#3a3f48"/>
+ <text x="418" y="790" fill="#f1f1f1" font-weight="700">P2 계획</text><text x="418" y="810" fill="#9aa0a6">meeting-minutes · wave-plan</text><text x="418" y="828" fill="#9aa0a6">회의록 · 웨이브 계획</text><text x="418" y="860" fill="#9aa0a6">G2 합의 후 Kickoff</text>
+ <rect x="599" y="768" width="183" height="104" rx="8" fill="#1d2433" stroke="#6aa8ff" stroke-width="1.6"/>
+ <text x="611" y="790" fill="#6aa8ff" font-weight="700">P3 수행·통제 ★시연</text><text x="611" y="810" fill="#c9ccd1">status-report · risk-update</text><text x="611" y="828" fill="#c9ccd1">주간 보고 · 리스크 경보</text><text x="611" y="860" fill="#c9ccd1">G3 마일스톤 리뷰</text>
+ <rect x="792" y="768" width="183" height="104" rx="8" fill="#161a21" stroke="#3a3f48"/>
+ <text x="804" y="790" fill="#f1f1f1" font-weight="700">P4 인수·이관</text><text x="804" y="810" fill="#9aa0a6">acceptance-check</text><text x="804" y="828" fill="#9aa0a6">인수시험 체크리스트</text><text x="804" y="860" fill="#9aa0a6">G4 고객 인수 서명</text>
+ <rect x="985" y="768" width="175" height="104" rx="8" fill="#161a21" stroke="#3a3f48"/>
+ <text x="997" y="790" fill="#f1f1f1" font-weight="700">P5 종료</text><text x="997" y="810" fill="#9aa0a6">closing-report</text><text x="997" y="828" fill="#9aa0a6">완료 보고 · 교훈</text><text x="997" y="860" fill="#9aa0a6">G5 고객 협의 종료</text>
+</g>
+</svg>
+<p class="sub" style="margin-top:12px">범례: 초록 = 수신 확인, 파랑 = AI 생성, 주황 = 사람 승인 경로, 점선 = 사람의 응답. 실제 동작 범위는 P3 주간 루프(★)와 P0→P1이며, 나머지 단계는 설계로 제시합니다.</p>
+</div></body></html>

@@ -1,0 +1,97 @@
+{
+  "week": 5,
+  "changes": [
+    {
+      "table": "risks",
+      "op": "update",
+      "key": "R-001",
+      "fields": {
+        "probability": "H"
+      },
+      "reason": "요청 후 9영업일, 다음 주까지 안 되면 웨이브1 시작 1주 지연 가능 — 곧 현실화될 징후로 확률 상향(추정)"
+    },
+    {
+      "table": "risks",
+      "op": "update",
+      "key": "R-002",
+      "fields": {
+        "status": "Occurred"
+      },
+      "reason": "야간 배치 테스트: 3.8h (목표 3h) — 테스트에서 목표 미달 확인, 리스크 현실화"
+    },
+    {
+      "table": "issues",
+      "op": "add",
+      "row": {
+        "title": "[R-002] 야간 배치 성능 목표 미달",
+        "raised": "2026-W05",
+        "owner": "TBD",
+        "priority": "High",
+        "status": "Open",
+        "resolution": ""
+      },
+      "reason": "야간 배치 테스트: 3.8h (목표 3h). 대형 테이블 2개 파티셔닝 검토 필요 — R-002 현실화에 따른 이슈 등록"
+    },
+    {
+      "table": "actions",
+      "op": "add",
+      "row": {
+        "title": "소스 DB 권한 이슈 에스컬레이션",
+        "owner": "TBD",
+        "due": "2026-W06",
+        "status": "Open",
+        "source": "5주차 메모"
+      },
+      "reason": "다음 주: 권한 이슈 에스컬레이션"
+    },
+    {
+      "table": "actions",
+      "op": "add",
+      "row": {
+        "title": "대형 테이블 2개 파티셔닝 검토",
+        "owner": "TBD",
+        "due": "2026-W06",
+        "status": "Open",
+        "source": "5주차 메모"
+      },
+      "reason": "야간 배치 테스트 3.8h — 대형 테이블 2개 파티셔닝 검토 필요"
+    },
+    {
+      "table": "actions",
+      "op": "add",
+      "row": {
+        "title": "파일럿 고객 리뷰 일정 확정",
+        "owner": "TBD",
+        "due": "2026-W06",
+        "status": "Open",
+        "source": "5주차 메모"
+      },
+      "reason": "다음 주: 파일럿 고객 리뷰 일정 확정"
+    },
+    {
+      "table": "okr",
+      "op": "update",
+      "key": "KR1 핵심 리포트 Databricks 전환",
+      "fields": {
+        "current": 6
+      },
+      "reason": "파일럿 웨이브: 리포트 8종 중 6종 전환 완료 — 누적 완료 수 6종"
+    },
+    {
+      "table": "okr",
+      "op": "update",
+      "key": "KR2 야간 배치 완료 시간",
+      "fields": {
+        "current": 3.8
+      },
+      "reason": "야간 배치 테스트: 3.8h (목표 3h) — 최신 측정값"
+    }
+  ],
+  "notes": [
+    "A-001(소스 DB 읽기 권한 요청) 기한이 2026-W04로 이미 지났으나 Open 상태. 에스컬레이션 완료 후 상태 갱신 필요.",
+    "M4(웨이브1 완료, W10) 1주 지연 가능성 있음(권한 승인이 다음 주까지 안 될 경우). 지연 확정 시 Delayed로 변경 필요.",
+    "BI팀 리포트 필터 기본값 변경 요청: 메모에 '범위 밖일 수 있음'이라고만 언급 — CR 공식 접수 전이므로 변경 요청 미등록. 범위 판단 후 CR 여부 결정 필요.",
+    "KR2 current를 기존 6h에서 3.8h로 갱신함. 이전 값(6h)의 측정 시점 불명확하나 메모의 최신 테스트 결과(3.8h)를 우선 적용.",
+    "신규 액션 3건 및 이슈 1건의 owner가 TBD — 메모에 담당자 미언급. 에스컬레이션은 R-001 owner(TPM), 파티셔닝 검토·이슈는 R-002 owner(RSA) 배정을 PM이 검토 필요."
+  ]
+}

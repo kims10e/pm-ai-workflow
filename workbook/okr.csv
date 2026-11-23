@@ -1,0 +1,4 @@
+objective,key_result,target,current,unit,priority
+O1 분석 플랫폼 현대화,KR1 핵심 리포트 Databricks 전환,40,8,종,P0
+O1 분석 플랫폼 현대화,KR2 야간 배치 완료 시간,3,3.1,h,P0
+O1 분석 플랫폼 현대화,KR3 레거시 DW 라이선스 종료일 준수,14,14,주차,P1
